@@ -1,0 +1,43 @@
+{% extends "home.html" %}
+
+{% block title %}
+
+  <h3>
+    {{ object.user }}
+  </h3>
+  <h1>
+    {{ object.title }}
+  </h1>
+{% endblock %}
+
+
+{% block add %}
+
+
+  {{ object.content }}
+
+  <br><br>
+  {% if request.user.is_authenticated %}
+    {% if request.user.is_staff %}
+      <p>
+      <a href='/blog'>
+        <button>
+          Return
+        </button>
+      </a>
+      <a href='{{ object.get_edit_url }}'>
+        <button>
+          Edit
+        </button>
+      </a>
+
+      <a href='{{ object.get_delete_url }}'>
+        <button>
+          Delete
+        </button>
+      </a>
+      </p>
+    {% endif %}
+  {% endif %}
+
+{% endblock %}

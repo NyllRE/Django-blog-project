@@ -1,0 +1,35 @@
+{% extends "home.html" %}
+
+{% block title %}
+  <h2>
+    are you sure you want to delete the following?
+  </h2>
+{% endblock %}
+
+
+{% block add %}
+  <h1>
+    {{ object.title }}
+  </h1>
+  <h4> 
+    made by: {{ object.user }}
+    <br>
+    slug: {{ object.slug }}
+  </h4>
+
+  <form method="POST">
+  {% csrf_token %}
+
+    <button
+    style="background: red; color: black;"
+    > Yes, Delete </button>
+
+  </form>
+  
+  
+    <a href="{{ object.get_absolute_url }}"> 
+      <button class="BiA">
+        cancel 
+      </button>
+    </a> 
+{% endblock %}

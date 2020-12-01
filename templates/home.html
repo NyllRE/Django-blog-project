@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> {{ title }} </title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <style>
+
+    body {
+      height: 90vh;
+      padding: 0; margin: 0;
+      background-color: #151555;
+      color: red;
+    }
+    .header {
+      width: 100%;
+      text-align: center;
+    }
+    .mid {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+    }
+    .posts {
+      list-style: none;
+      {% comment %} border: red 1px solid; {% endcomment %}
+      border-radius: 8px;
+      padding: 6px; 
+      background: #151555;
+      line-height: 1px;
+      margin-bottom: 19px;
+      box-shadow:  12px 12px 22px #050522, 
+             -12px -12px 22px #202088;
+    }
+    .posts span {
+      position: absolute;
+      left: 20px;
+      transform: translateY(20px);
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 90px;
+    }
+    h2 {
+      font-size: 40px;
+    }
+    input, textarea, button {
+      padding: 6px;
+      font-size: 20px;
+      background: transparent;
+      border-radius: 8px;
+      color: red;
+      border: red 1px solid;
+    }
+    button {
+      padding-left: 12px;
+      padding-right:12px;
+      transition: 0.34s;
+    }
+    button:hover {
+      transform: scale(1.2);
+      background: red;
+      color: black;
+      padding-left:   17px;
+      padding-right:  17px;
+      padding-top:    7px;
+      padding-bottom: 7px;
+    }
+
+    a:link, a:visited, a:active {
+      text-decoration: none;
+      color: red;
+      transition: 0.37s;
+    }
+    a:hover {
+      color: orange;
+    }
+    .BiA a:hover {
+      color: black;
+    }
+  </style>
+
+
+</head>
+<body>
+  {% block above %}
+  {% endblock %}
+  <div class="mid">
+    <h1>{% block title %} {{ title }} {% endblock %}</h1>
+
+    <h2>
+      {% block add %}
+        this is the home page
+      {% endblock %}
+    </h2>
+
+  </div>
+</body>
+</html> 
