@@ -15,16 +15,25 @@
     }
     .header {
       width: 100%;
+      height: 30%;
       text-align: center;
     }
     .mid {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       display: block;
+      text-align: center;
+    }
+    .mid #posts {
       position: absolute;
       left: 50%;
-      top: 50%;
+      top: 70%;
       transform: translate(-50%,-50%);
-      text-align: center;
+    }
+    .mid #normal {
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     }
     .posts {
       list-style: none;
@@ -32,7 +41,6 @@
       border-radius: 8px;
       padding: 6px; 
       background: #151555;
-      line-height: 1px;
       margin-bottom: 19px;
       box-shadow:  12px 12px 22px #050522, 
              -12px -12px 22px #202088;
@@ -42,6 +50,7 @@
       left: 20px;
       transform: translateY(20px);
       font-size: 20px;
+      height: auto;
     }
     h1 {
       font-size: 90px;
@@ -88,17 +97,27 @@
 
 </head>
 <body>
+
   {% block above %}
   {% endblock %}
-  <div class="mid">
-    <h1>{% block title %} {{ title }} {% endblock %}</h1>
 
-    <h2>
-      {% block add %}
-        this is the home page
+  <div class="mid">
+
+    <span id="normal">
+      {% block title %}
+
+        <h1> {{ title }} </h1>
+
       {% endblock %}
-    </h2>
+    </span>
+
+    {% block add %}
+      <h2>
+        this is the home page
+      </h2>
+    {% endblock %}
 
   </div>
+  
 </body>
 </html> 

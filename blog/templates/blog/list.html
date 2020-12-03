@@ -1,21 +1,11 @@
 {% extends "home.html" %}
 
-{% block above %}
 
-  <div class="header">
+{% block above %}
+  <div class='header'>
     <h2>
       List of blogs  
     </h2>
-  </div>
-
-{% endblock %}
-
-{% block title %}
-{% endblock  %}
-
-{% block add %}
-
-  <div>
     <h5>
       <a href="/create">
       <button>
@@ -24,23 +14,33 @@
       </a>
     </h5>
   </div>
+{% endblock %}
 
-  {% for object in object_list %}
+{% block title %}
 
-    <li class="posts">
+{% endblock %}
 
-      <span>{{ object.user }}</span>
-      <a href="{{ object.get_absolute_url }}">
-      <h6></h6>
-        {{ object.title }}
-        <h6>
-          {{ object.content }}
-        </h6>
+{% block add %}
 
-      </a>
-    </li>
-    
-  {% endfor %}
+
+  <div class="mid" id="posts">
+    {% for object in object_list %}
+
+      <li class="posts">
+
+        <span>{{ object.user }}</span>
+        <a href="{{ object.get_absolute_url }}">
+        <h6></h6>
+          {{ object.title }}
+          <h6>
+            {{ object.content }}
+          </h6>
+
+        </a>
+      </li>
+      
+    {% endfor %}
+  </div>
 
 
 
