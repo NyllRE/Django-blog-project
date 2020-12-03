@@ -10,7 +10,6 @@ class blogPost(models.Model):                              # SET_NULL
   title = models.TextField()
   slug = models.SlugField(unique=True)
   content = models.TextField(null=True, blank=True)
-  likes = models.IntegerField()
 
   def get_absolute_url(self):
     return f"/blog/{self.slug}"
